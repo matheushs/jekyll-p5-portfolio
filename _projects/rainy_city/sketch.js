@@ -4,6 +4,7 @@ let bg;
 function setup() {
   // put setup code here
   createCanvas(windowWidth, windowHeight);
+  canvas.parent('sketch-holder');
   gravity = createVector(0, 9.8);
 
   for (let i = 0; i < 500; i++) {

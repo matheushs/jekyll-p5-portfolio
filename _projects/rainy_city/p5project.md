@@ -2,7 +2,7 @@
 layout: post
 title:  "Rainy City"
 date:   2018-01-17
-#thumbnail: particles_thumbnail.png
+thumbnail: city_thumbnail.png
 dependencies:
     - p5
 ---
