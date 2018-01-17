@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Rainy City"
-date:   2016-08-01
-thumbnail: particles_thumbnail.png
+date:   2018-01-16 #year-month-day
+thumbnail: bg.jpg
 dependencies:
     - p5
 ---

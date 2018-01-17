@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: p5 testing area
+title: p5 playground
 email: matt.h.soares@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   This is an place where I'll post stuff I do with p5.js and Processing
