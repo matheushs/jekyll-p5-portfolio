@@ -19,7 +19,6 @@
 /* relevant styles */
 .img__wrap {
   position: relative;
-  margin: 1em;
 }
 
 .img__description_layer {
@@ -57,4 +56,18 @@
 .post-content p img {
     display: block;
     margin: auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  & > * {
+    margin: 1em 0 1em 0;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

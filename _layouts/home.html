@@ -3,10 +3,10 @@ layout: default
 ---
 
 <div class="home">
-  <div class="row">
+  <div class="gallery">
     {% assign projects = site.projects | sort: 'date' | reverse %}
     {% for project in projects %}
-    <div class="col-lg-4 col-md-4 col-sm-6">
+    <div>
       <a href="{{ project.url | relative_url }}">
         <div class="img__wrap">
           {%if project.thumbnail %}
