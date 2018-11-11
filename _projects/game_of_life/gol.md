@@ -9,6 +9,9 @@ dependencies:
 ---
  
 An implementation of Conway's Game of Life.  
-<div id="sketch-holder" style="height: 600px">
+Edit Mode: 
+- Left Mouse Button inserts cells
+- Ctrl + Left Mouse Button removes cells
+<div id="sketch-holder" style="min-height: 600px">
   <script type="text/javascript" src="sketch/sketch.js"></script>
 </div>
