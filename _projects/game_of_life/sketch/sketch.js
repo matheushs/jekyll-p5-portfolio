@@ -11,20 +11,25 @@ function make2DArray(cols, rows){
 let grid;
 let cols;
 let rows;
-let resolution = 8;
+let resolution = 30;
 
 function setup(){
     myDiv = document.getElementById('sketch-holder');
-    console.log(myDiv.offsetWidth);
-    console.log(myDiv.offsetHeight);
     myCanvas = createCanvas(myDiv.offsetWidth, myDiv.offsetHeight);
     myCanvas.parent('sketch-holder');
 
-    //createCanvas(600, 400);
+    width = myDiv.offsetWidth;
+    height = myDiv.offsetHeight - 50;
 
     cols = floor(myDiv.offsetWidth / resolution);
     rows = floor(myDiv.offsetHeight / resolution);
 
+    generateGame();
+
+    frameRate(30);
+}
+
+function generateGame(){
     grid = make2DArray(cols,rows);
 
     for (let i = 0; i < cols; i++) {
@@ -32,14 +37,10 @@ function setup(){
             grid[i][j] = floor(random(2));
         }
     }
-    
-    grid.forEach(i => {
-        i.forEach(j => {
-            j = floor(random(2));
-        });
-    });
-    
-    frameRate(30);
+}
+
+function mousePressed(){
+    generateGame();
 }
 
 function windowResized() {
@@ -87,23 +88,14 @@ function draw(){
             */
             
             //Toroidal wrapping
-            for(let r = -1; r <= 1; r++){
-                for(let c = -1; c <= 1; c++){
+            for(let c = -1; c <= 1; c++){
+                for(let r = -1; r <= 1; r++){
                     if(r == 0 && c == 0) //Skip center tile
                         continue;
                     
-                    let x = c + i;
-                    let y = r + j;
-                    
-                    if(c+i < 0)
-                        x = cols + c;
-                    if(r+j < 0)
-                        y = rows + r;
-                    if (c+i >= cols)
-                        x = (c+i) % cols;
-                    if (r+j >= rows)
-                        y = (r+j) % rows;
-                    
+                    let x = (c + i + cols) % cols;
+                    let y = (r + j + rows) % rows;
+                                        
                     n += grid[x][y];
                 }
             }
