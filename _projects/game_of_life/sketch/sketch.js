@@ -1,22 +1,16 @@
-function make2DArray(cols, rows){
-    let arr = new Array(cols);
-
-    for (let i = 0; i < cols; i++) {
-        arr[i] = new Array(cols);
-    }
-    
-    return arr;
-}
-
 let grid;
 let cols;
 let rows;
 let resolution = 30;
+let fpsSlider;
+let pFps;
 
 function setup(){
     myDiv = document.getElementById('sketch-holder');
     myCanvas = createCanvas(myDiv.offsetWidth, myDiv.offsetHeight);
     myCanvas.parent('sketch-holder');
+    pFps = createP('Fps Value: 30').parent('sketch-holder');
+    fpsSlider = createSlider(1,60,30).parent('sketch-holder');
 
     width = myDiv.offsetWidth;
     height = myDiv.offsetHeight - 50;
@@ -26,7 +20,19 @@ function setup(){
 
     generateGame();
 
-    frameRate(30);
+    button = createButton("Reset Game").parent('sketch-holder');
+    button.mousePressed(generateGame);
+    frameRate(fpsSlider.value());
+}
+
+function make2DArray(cols, rows){
+    let arr = new Array(cols);
+
+    for (let i = 0; i < cols; i++) {
+        arr[i] = new Array(cols);
+    }
+    
+    return arr;
 }
 
 function generateGame(){
@@ -39,17 +45,14 @@ function generateGame(){
     }
 }
 
-function mousePressed(){
-    generateGame();
-}
-
 function windowResized() {
     resizeCanvas(myDiv.offsetWidth, myDiv.offsetHeight);
 }
 
 function draw(){
     background(255);
-
+    frameRate(fpsSlider.value());
+    pFps.html("Fps Value: " + fpsSlider.value());
     //Draw the board
     for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {

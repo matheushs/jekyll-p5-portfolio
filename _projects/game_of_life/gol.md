@@ -9,7 +9,6 @@ dependencies:
 ---
  
 An implementation of Conway's Game of Life.  
-Click on the board to restart.
-<div id="sketch-holder" style="height: 450px">
+<div id="sketch-holder" style="height: 600px">
   <script type="text/javascript" src="sketch/sketch.js"></script>
 </div>
