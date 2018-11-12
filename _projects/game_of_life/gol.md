@@ -8,7 +8,7 @@ dependencies:
     - p5.dom
 ---
  
-An implementation of Conway's Game of Life. The Game of Life is a cellular automaton created by mathematician John Horton Conway in 1970. It's a zero-player game, consisting of cells which interacts with each other based on the following set of rules:
+An implementation of Conway's Game of Life. The Game of Life is a cellular automaton created by mathematician John Horton Conway in 1970. It's a zero-player game, consisting of cells which interact with each other based on the following set of rules:
 > Any live cell with fewer than two live neighbors dies, as if by underpopulation.<br/>
 > Any live cell with two or three live neighbors lives on to the next generation.<br/>
 > Any live cell with more than three live neighbors dies, as if by overpopulation.<br/>
